@@ -1,0 +1,75 @@
+.btn-container {
+    position: relative;
+    background: transparent;
+    padding: 1px;
+    border-radius: 1.75rem;
+    overflow: hidden;
+    width: 210px;
+    height: 55px;
+    top: -120px;
+    margin-top: 100px;
+}
+
+.btn-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.68rem;
+    animation: rotate 3s linear infinite;
+    pointer-events: none;
+}
+
+.btn-border::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at center, 
+        rgba(14, 165, 233, 0.8) 0%, 
+        transparent 60%);
+    animation: move 4s linear infinite;
+}
+
+.btn-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(30, 41, 59, 0.8);
+    border-radius: 1.68rem;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 2px;
+}
+
+.btn-content:hover {
+    background: rgba(212, 227, 255, 0.329);
+    
+}
+
+@keyframes move {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
