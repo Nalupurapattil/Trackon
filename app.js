@@ -91,18 +91,35 @@ videoObserver.observe(videoSection);
 
 
 
-const cardObserver = new IntersectionObserver((entries) => {
+const aiSection = document.querySelector('.ai-business');
+const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            // Animate section
             entry.target.style.opacity = 1;
             entry.target.style.transform = 'translateY(0)';
+            
+            // Animate cards with delay
+            const cards = entry.target.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                }, index * 200); // 200ms delay between cards
+            });
         }
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.ai-business').forEach(card => {
+// Initialize section state
+aiSection.style.opacity = 0;
+aiSection.style.transform = 'translateY(30px)';
+aiSection.style.transition = 'all 0.6s ease';
+sectionObserver.observe(aiSection);
+
+// Initialize card states
+document.querySelectorAll('.card').forEach(card => {
     card.style.opacity = 0;
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'all 0.6s ease';
-    cardObserver.observe(card);
 });
