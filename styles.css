@@ -9,6 +9,8 @@ body {
     background: black;
     font-family: Arial, sans-serif;
     overflow-x: hidden; 
+    /* #Todo */
+    font-family: "Michroma", sans-serif; 
 }
 
 .sparkles-container {
