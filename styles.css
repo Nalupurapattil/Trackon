@@ -345,5 +345,10 @@ a {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
 
+header {
+    position: sticky;
+    top: 20px;
+    
 }
