@@ -9,12 +9,12 @@ body {
     background: black;
     font-family: Arial, sans-serif;
     overflow-x: hidden; 
-    /* #Todo */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     padding: 0rem 5%;
     box-sizing: border-box;
+    padding-top: 70px;
 }
 
 .sparkles-container {
@@ -391,11 +391,18 @@ body {
         font-size: 2rem;
         letter-spacing: 8px;
     }
+
+    .sparkles-container{
+        padding-top: 0px;
+        margin-top: 0%;
+    }
     
     .sparkles-subheading {
+        
         font-size: 20px;
         letter-spacing: 4px;
         margin-bottom: 1.5rem;
+        padding-bottom: 20px;
     }
     
     .video-heading {
@@ -415,6 +422,28 @@ body {
     .home-text {
         margin-top: 1.5rem;
     }
+
+    .main-nav{
+       
+        position: relative; /* Crucial for absolute positioning context */
+        height: 1240px;
+        
+    }
+
+    .nav-links{
+        width: 360px;
+        
+    }
+
+    .nav-links a{
+        font-size: 200px;
+        gap: 10px;
+    }
+
+    .nav-links a::after {
+        font-size: 5px;
+    }
+
 }
 
 /* Existing Mobile (768px and below) - Keep this at bottom */
@@ -443,32 +472,90 @@ body {
 }
 
 /*----------------------navbar ----*/
-#nav {
-    width: 750px;
-    height: 56px;
-    border: 1px solid white;
-    border-radius: 20px;
+
+.main-nav {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    background-color: black;
+    z-index: 100;
+    transition: all 0.5s ease-in-out;
 }
 
-a {
+/* Logo on Left */
+.nav-logo {
+    font-family: "Michroma", serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+    padding-left: 105px;
+    letter-spacing: 10px;
+}
+
+/* Initial Nav Links (Centered) */
+.nav-links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    padding: 8px 10px;
+    border-radius: 30px;
+    display: flex;
+    gap: 80px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Floating Nav Effect */
+.scrolled .nav-links {
+ 
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.167);
+    padding: 8px 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.064);
+}
+
+/* Hide Logo When Scrolled */
+.scrolled .nav-logo {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scrolled .nav-links a{
+    color: #afafaf;
+}
+
+/* Links */
+.nav-links a {
     text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 2;
+    padding: 5px 30px
+}
+
+.nav-links a:hover {
     color: white;
 }
 
-.navbar {
-    margin-top: 20px;
-    height: 56px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
 
-header {
-    position: sticky;
-    top: 20px;
-    z-index: 10000;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: white;
+    transition: width 0.3s ease;
 }

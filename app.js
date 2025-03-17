@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 },
                 size: {
                     value: {
-                        min: 0.4,
+                        min: 0.8,
                         max: 1
                     }
                 },
@@ -123,3 +123,21 @@ document.querySelectorAll('.card').forEach(card => {
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'all 0.6s ease';
 });
+
+
+//nav bar animation 
+
+
+window.addEventListener("scroll", function () {
+    let nav = document.querySelector(".main-nav");
+    if (window.scrollY > 100) {
+        nav.classList.add("scrolled");
+    } else {
+        nav.classList.remove("scrolled");
+    }
+});
+
+
+
+
+
