@@ -281,196 +281,6 @@ body {
     transform: translateY(0);
 }
 
-
-/* Animation keyframes */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .sparkles-heading {
-        font-size: 2.5rem;
-        letter-spacing: 10px;
-    }
-    
-    .sparkles-subheading {
-        font-size: 1.2rem;
-        letter-spacing: 4px;
-    }
-    
-    .video-heading {
-        font-size: 1.8rem;
-    }
-    
-    .card-container {
-        gap: 1.5rem;
-    }
-}
-
-/* Remove all negative margins */
-.sparkles-subheading,
-.home-text,
-.video-section {
-    margin-top: 0 !important;
-}
-
-
-/* Monitor Screens (1440px and above) */
-@media (min-width: 1441px) {
-    .sparkles-heading {
-        font-size: 5rem;
-        letter-spacing: 30px;
-    }
-    
-    .video-container {
-        max-width: 1100px;
-    }
-    
-    .card-container {
-        grid-template-columns: 1fr 0.95fr 0.85fr;
-        max-width: 1400px;
-    }
-
-    .video-section {
-        top: 70px;
-    }
-}
-
-/* Laptop Screens (1024px - 1440px) */
-@media (max-width: 1440px) and (min-width: 1025px) {
-    .sparkles-heading {
-        font-size: 4.5rem;
-        letter-spacing: 25px;
-    }
-    
-    .card-container {
-        gap: 1.5rem;
-    }
-    
-    .video-heading {
-        font-size: 2.8rem;
-    }
-}
-
-/* Tablet Screens (768px - 1024px) */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .sparkles-container {
-        padding-top: 80px;
-    }
-    
-    .sparkles-heading {
-        font-size: 3.5rem;
-        letter-spacing: 15px;
-    }
-    
-    .card-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .card--small {
-        grid-column: span 2;
-    }
-    
-    .video-container {
-        max-width: 700px;
-    }
-}
-
-/* Smartphone Screens (480px and below) */
-@media (max-width: 480px) {
-    .sparkles-heading {
-        font-size: 2rem;
-        letter-spacing: 8px;
-    }
-
-    .sparkles-container{
-        padding-top: 0px;
-        margin-top: 0%;
-    }
-    
-    .sparkles-subheading {
-        
-        font-size: 20px;
-        letter-spacing: 4px;
-        margin-bottom: 1.5rem;
-        padding-bottom: 20px;
-    }
-    
-    .video-heading {
-        font-size: 1rem;
-        letter-spacing: 5px;
-        padding-bottom: 0%;
-    }
-    
-    .card-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .feature-video {
-        border-radius: 8px;
-    }
-    
-    .home-text {
-        margin-top: 1.5rem;
-    }
-
-    .main-nav{
-       
-        position: relative; /* Crucial for absolute positioning context */
-        height: 1240px;
-        
-    }
-
-    .nav-links{
-        width: 360px;
-        
-    }
-
-    .nav-links a{
-        font-size: 200px;
-        gap: 10px;
-    }
-
-    .nav-links a::after {
-        font-size: 5px;
-    }
-
-}
-
-/* Existing Mobile (768px and below) - Keep this at bottom */
-@media (max-width: 768px) {
-    .sparkles-wrapper {
-        width: 90%;
-    }
-    
-    .video-section {
-        min-height: auto;
-        padding: 2rem 1rem;
-    }
-    
-    .section-heading {
-        font-size: 2.2rem;
-        margin-bottom: 2rem;
-    }
-    
-    .card-image-container {
-        height: 250px !important;
-    }
-    
-    .home-description {
-        font-size: 1rem;
-    }
-}
-
 /*----------------------navbar ----*/
 
 .main-nav {
@@ -545,7 +355,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: white;
+    color: rgb(111, 141, 180);
 }
 
 
@@ -558,4 +368,242 @@ body {
     height: 1px;
     background: white;
     transition: width 0.3s ease;
+}
+
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sparkles-heading {
+        font-size: 2.5rem;
+        letter-spacing: 10px;
+    }
+    
+    .sparkles-subheading {
+        font-size: 1.2rem;
+        letter-spacing: 4px;
+    }
+    
+    .video-heading {
+        font-size: 1.8rem;
+    }
+    
+    .card-container {
+        gap: 1.5rem;
+    }
+}
+
+/* Remove all negative margins */
+.sparkles-subheading,
+.home-text,
+.video-section {
+    margin-top: 0 !important;
+}
+
+
+/* Monitor Screens (1440px and above) */
+@media (min-width: 1441px) {
+    .sparkles-heading {
+        font-size: 5rem;
+        letter-spacing: 30px;
+    }
+    
+    .video-container {
+        max-width: 1100px;
+    }
+    
+    .card-container {
+        grid-template-columns: 1fr 0.95fr 0.85fr;
+        max-width: 1400px;
+    }
+
+    .video-section {
+        top: 70px;
+    }
+}
+
+/* Laptop Screens (1024px - 1440px) */
+@media (max-width: 1440px) and (min-width: 1025px) {
+    .sparkles-heading {
+        font-size: 4.5rem;
+        letter-spacing: 25px;
+        padding-top: 0%;
+        
+    }
+    
+    .card-container {
+        gap: 1.5rem;
+        
+    }
+    
+    .video-heading {
+        font-size: 2.8rem;
+    }
+
+    .sparkles-container{
+        margin-top: 80px;
+    }
+
+    .nav-links{
+        width: 800px;
+        gap: 60px;
+    }
+
+    .nav-links a{
+        font-size: 15px;
+        
+    }
+
+    .nav-logo{
+        font-size: 10px;
+        padding-left: 50px;
+}
+}
+
+/* Tablet Screens (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .sparkles-container {
+        padding-top: 80px;
+    }
+    
+    .sparkles-heading {
+        font-size: 3.5rem;
+        letter-spacing: 15px;
+    }
+    
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card--small {
+        grid-column: span 2;
+    }
+    
+    .video-container {
+        max-width: 700px;
+    }
+
+
+}
+
+/* Smartphone Screens (480px and below) */
+@media (max-width: 480px) {
+    .sparkles-heading {
+        font-size: 2rem;
+        letter-spacing: 8px;
+        margin-top: 130px;
+    }
+
+    .sparkles-container{
+        padding-top: 0px;
+        margin-top: 0%;
+    }
+    
+    .sparkles-subheading {
+        
+        font-size: 20px;
+        letter-spacing: 4px;
+        margin-bottom: 1.5rem;
+        padding-bottom: 20px;
+    }
+    
+    .video-heading {
+        font-size: 1rem;
+        letter-spacing: 5px;
+        padding-bottom: 0%;
+    }
+    
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-video {
+        border-radius: 8px;
+    }
+    
+    .home-text {
+        margin-top: 1.5rem;
+    }
+
+    .main-nav{
+        position: relative; /* Crucial for absolute positioning context */
+    }
+
+    .nav-links{
+        width: 360px;
+        gap: 20px;
+    }
+
+    .nav-links a{
+        font-size: 11px;
+        gap: 1px;
+        padding: 5px 8px;
+    }
+
+    .nav-links a::after {
+        font-size: 5px;
+    }
+
+    .nav-logo{
+        visibility: hidden;
+    }
+
+    .main-nav {
+        position: fixed; /* Make the navbar fixed */
+        top: auto; /* Remove top positioning */
+        bottom: 20px; /* Position at the bottom */
+        left: 0;
+        width: 100%;
+        padding: 10px 20px;
+        background: rgba(0, 0, 0, 0.8); /* Add background color */
+        
+        z-index: 1000; /* Ensure it stays above other content */
+        transition: top 0.3s ease; /* Smooth transition for sticky behavior */
+    }
+
+    .nav-links {
+        justify-content: space-around; /* Space out links evenly */
+        gap: 10px; /* Reduce gap between links */
+    }
+
+    
+
+
+}
+
+/* Existing Mobile (768px and below) - Keep this at bottom */
+@media (max-width: 768px) {
+    .sparkles-wrapper {
+        width: 90%;
+    }
+    
+    .video-section {
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
+    
+    .section-heading {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .card-image-container {
+        height: 250px !important;
+    }
+    
+    .home-description {
+        font-size: 1rem;
+    }
 }

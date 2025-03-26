@@ -212,5 +212,103 @@
 }
 
 
+
+
   
   
+/* General Styles */
+body {
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+
+
+
+
+
+
+
+.company-overview p {
+    width: 100%; /* Full width on small screens */
+    max-width: 1200px; /* Limit maximum width */
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+    padding: 0 20px; /* Add padding for smaller screens */
+}
+
+
+
+
+/* Smartphone Screens (480px and below) */
+@media (max-width: 480px) {
+    
+    
+    .sparkles-subheading {
+        
+        font-size: 20px;
+        letter-spacing: 4px;
+        margin-bottom: 1.5rem;
+        padding-bottom: 20px;
+   
+}
+
+.company-overview{
+    margin-bottom: 50px;
+}
+
+.A-cards h2{
+    padding-top: 60px;
+    font-size: 30px;
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 20px;
+}
+
+.missviss {
+    width: 100%; /* Full width on small screens */
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr; /* Single column */
+    grid-template-rows: auto auto; /* Two rows */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center the grid */
+    padding-bottom: 50px; /* Adjust padding for smaller screens */
+}
+
+.missviss .card1 {
+    width: 100%; /* Full width on small screens */
+    max-width: 400px; /* Limit maximum width */
+    margin: 0 auto; /* Center the cards */
+}
+
+.missviss .card1 .face {
+    width: 100%; /* Full width on small screens */
+    height: auto; /* Adjust height for smaller screens */
+}
+
+.missviss .card1 .face.face1 {
+    transform: translateY(0); /* Reset transform for small screens */
+    
+}
+
+.missviss .card1:hover .face.face1 {
+    transform: translateY(0); /* Reset transform for small screens */
+}
+
+.missviss .card1 .face.face2 {
+    transform: translateY(0); /* Reset transform for small screens */
+    height: 200px;
+}
+
+.missviss .card1:hover .face.face2 {
+    transform: translateY(0); /* Reset transform for small screens */
+}
+
+.missviss .card1 .face.face1 .content h3{
+    font-size: 1.5rem;
+}
+
+.a-card-container{
+    grid-template-columns: 1fr;
+}
+
+}
+
