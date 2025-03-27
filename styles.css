@@ -9,12 +9,12 @@ body {
     background: black;
     font-family: Arial, sans-serif;
     overflow-x: hidden; 
-    /* #Todo */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     padding: 0rem 5%;
     box-sizing: border-box;
+    padding-top: 70px;
 }
 
 .sparkles-container {
@@ -281,6 +281,95 @@ body {
     transform: translateY(0);
 }
 
+/*----------------------navbar ----*/
+
+.main-nav {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Logo on Left */
+.nav-logo {
+    font-family: "Michroma", serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+    padding-left: 105px;
+    letter-spacing: 10px;
+}
+
+/* Initial Nav Links (Centered) */
+.nav-links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    padding: 8px 10px;
+    border-radius: 30px;
+    display: flex;
+    gap: 80px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Floating Nav Effect */
+.scrolled .nav-links {
+ 
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.167);
+    padding: 8px 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.064);
+}
+
+/* Hide Logo When Scrolled */
+.scrolled .nav-logo {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scrolled .nav-links a{
+    color: #afafaf;
+}
+
+/* Links */
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 2;
+    padding: 5px 30px
+}
+
+.nav-links a:hover {
+    color: rgb(111, 141, 180);
+}
+
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
 
 /* Animation keyframes */
 @keyframes fadeInUp {
@@ -350,15 +439,37 @@ body {
     .sparkles-heading {
         font-size: 4.5rem;
         letter-spacing: 25px;
+        padding-top: 0%;
+        
     }
     
     .card-container {
         gap: 1.5rem;
+        
     }
     
     .video-heading {
         font-size: 2.8rem;
     }
+
+    .sparkles-container{
+        margin-top: 80px;
+    }
+
+    .nav-links{
+        width: 800px;
+        gap: 60px;
+    }
+
+    .nav-links a{
+        font-size: 15px;
+        
+    }
+
+    .nav-logo{
+        font-size: 10px;
+        padding-left: 50px;
+}
 }
 
 /* Tablet Screens (768px - 1024px) */
@@ -383,6 +494,8 @@ body {
     .video-container {
         max-width: 700px;
     }
+
+
 }
 
 /* Smartphone Screens (480px and below) */
@@ -390,12 +503,20 @@ body {
     .sparkles-heading {
         font-size: 2rem;
         letter-spacing: 8px;
+        margin-top: 130px;
+    }
+
+    .sparkles-container{
+        padding-top: 0px;
+        margin-top: 0%;
     }
     
     .sparkles-subheading {
+        
         font-size: 20px;
         letter-spacing: 4px;
         margin-bottom: 1.5rem;
+        padding-bottom: 20px;
     }
     
     .video-heading {
@@ -415,6 +536,51 @@ body {
     .home-text {
         margin-top: 1.5rem;
     }
+
+    .main-nav{
+        position: relative; /* Crucial for absolute positioning context */
+    }
+
+    .nav-links{
+        width: 360px;
+        gap: 20px;
+    }
+
+    .nav-links a{
+        font-size: 11px;
+        gap: 1px;
+        padding: 5px 8px;
+    }
+
+    .nav-links a::after {
+        font-size: 5px;
+    }
+
+    .nav-logo{
+        visibility: hidden;
+    }
+
+    .main-nav {
+        position: fixed; /* Make the navbar fixed */
+        top: auto; /* Remove top positioning */
+        bottom: 20px; /* Position at the bottom */
+        left: 0;
+        width: 100%;
+        padding: 10px 20px;
+        background: rgba(0, 0, 0, 0.8); /* Add background color */
+        
+        z-index: 1000; /* Ensure it stays above other content */
+        transition: top 0.3s ease; /* Smooth transition for sticky behavior */
+    }
+
+    .nav-links {
+        justify-content: space-around; /* Space out links evenly */
+        gap: 10px; /* Reduce gap between links */
+    }
+
+    
+
+
 }
 
 /* Existing Mobile (768px and below) - Keep this at bottom */
@@ -440,35 +606,4 @@ body {
     .home-description {
         font-size: 1rem;
     }
-}
-
-/*----------------------navbar ----*/
-#nav {
-    width: 750px;
-    height: 56px;
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: black;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-.navbar {
-    margin-top: 20px;
-    height: 56px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-header {
-    position: sticky;
-    top: 20px;
-    z-index: 10000;
 }
