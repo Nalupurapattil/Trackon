@@ -1,10 +1,20 @@
 .wrapper {
-    margin-top: 80px;
+    margin-top: 0px;
     position: relative;
     perspective: 40em;
     display: grid;
     transform-style: preserve-3d;
   }
+
+  .sparkles-container {
+    margin-top: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
   
   .card-1 {
     grid-area: 1 / 1;
@@ -71,3 +81,149 @@
     transition: .3s transform cubic-bezier(.25,.46,.45,1);
   }
   
+
+
+
+
+
+
+
+.section-heading {
+ 
+  padding-bottom: 0px;
+}
+
+
+/* Base Card Container */
+.card-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 150px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  perspective: 1000px;
+}
+
+/* Base Card Styles */
+.card {
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s ease;
+  box-shadow: 0px 10px 60px rgba(208, 208, 208, 0.418);
+  transform-style: preserve-3d;
+}
+
+/* Card Content */
+.card-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.349);
+  transition: all 0.5s ease;
+  color: #000;
+  font-family: "Michroma", sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 1000;
+}
+
+.card-content h3{
+  color: #000;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+/* Card Hover Effects */
+.card-section:hover .card:not(:hover) {
+  filter: blur(5px);
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+.card-section .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+/* Card Image */
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.1);
+}
+
+/* Responsive Styles */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .card-section {
+    gap: 60px;
+    padding: 30px 20px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .card-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    width: 300px;
+    max-width: 350px;
+    height: 280px;
+  }
+
+  .card-section:hover .card:not(:hover) {
+    filter: none;
+    transform: none;
+    opacity: 1;
+  }
+
+  .card:hover {
+    transform: scale(1.02) !important;
+  }
+
+  .section-heading {
+ 
+    
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+/* Very Small Phones */
+@media (max-width: 480px) {
+  .card {
+    height: 250px;
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+  }
+}
