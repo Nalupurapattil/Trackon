@@ -1,0 +1,265 @@
+/* Feature Cards Container */
+
+.sparkles-container {
+  margin-top: 0px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  
+ 
+}
+
+
+.feature-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    z-index: 200;
+  }
+  
+  /* Individual Feature Card */
+  .feature-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    text-decoration: none;
+    color: inherit;
+    height: 350px;
+    z-index: 50;
+  }
+  
+  /* Feature Card Image Wrapper */
+  .feature-card-img-wrap {
+    height: 100%;
+    overflow: hidden;
+    opacity: 50%;
+    z-index: 200;
+  }
+  
+  .feature-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    z-index: 200;
+  }
+  
+  /* Feature Card Content */
+  .feature-card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    z-index: 200;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card-title {
+    margin: 0 0 5px 0;
+    font-size: 1.5rem;
+    font-family: "Michroma", serif;
+  }
+  
+  .feature-card-desc {
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.1s;
+  }
+  
+  /* Hover Effects */
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  }
+
+  .feature-card-img-wrap:hover {
+    opacity: 80%;
+  }
+  
+  .feature-card:hover .feature-card-img {
+    transform: scale(1.1);
+  }
+  
+  .feature-card:hover .feature-card-body {
+    transform: translateY(0);
+  }
+  
+  .feature-card:hover .feature-card-desc {
+    opacity: 1;
+  }
+  
+  /* Tablet Responsive */
+  @media (max-width: 1024px) {
+    .feature-cards-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .feature-card {
+      height: 300px;
+    }
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .feature-cards-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .feature-card {
+      height: 250px;
+    }
+    .feature-card-body {
+      transform: translateY(0);
+      padding: 15px;
+    }
+    .feature-card-desc {
+      opacity: 1;
+    }
+  }
+
+
+  /* Contact Locations Section */
+.contact-locations {
+  width: auto;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  margin-top: 100px;
+}
+
+.contact-heading {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+  font-family: "Michroma", serif;
+}
+
+.location-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 310px;
+}
+
+.location-card {
+  background: #f9f9f900;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+}
+
+.location-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  font-family: "Michroma", serif;
+}
+
+.location-icon {
+  width: 24px;
+  height: 24px;
+  fill: hsl(0, 0%, 69%);
+  margin-right: 12px;
+}
+
+.location-title {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #ffffff;
+}
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 1rem;
+  color: #b6b6b6;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.contact-icon {
+  width: 18px;
+  height: 18px;
+  fill: #818181;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.contact-info a{
+  text-decoration: none;
+  color: #b6b6b6;
+}
+
+/* Tablet Responsive */
+@media (max-width: 900px) {
+  .location-container {
+    gap: 20px;
+  }
+  
+  .location-card {
+    padding: 25px;
+  }
+  
+  .location-title {
+    font-size: 1.3rem;
+  }
+  
+  .contact-info {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .contact-locations {
+    padding: 30px 15px;
+  }
+  
+  .contact-heading {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .location-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .location-card {
+    padding: 20px;
+  }
+  
+  .location-title {
+    font-size: 1.4rem;
+  }
+  
+  .contact-info {
+    font-size: 1rem;
+  }
+}
